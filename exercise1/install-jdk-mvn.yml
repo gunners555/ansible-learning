@@ -1,0 +1,32 @@
+---
+- hosts: web01
+  become: true
+  tasks:
+  - name: Install JDK-17
+    apt:
+      name: openjdk-17-jdk-headless
+      state: present
+
+  - name: Install Maven3
+    apt:
+      name: maven
+      state: present
+
+- hosts: db01
+  become: true
+  tasks:
+  - name: Update-Upgrade Machine
+    apt:
+      update_cache: yes
+      upgrade: dist
+  - name: Install JDK-17
+    apt:
+      name: openjdk-17-jdk-headless
+      state: present
+
+  - name: Install Maven3
+    apt:
+      name: maven
+      state: present
+
+
