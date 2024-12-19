@@ -28,7 +28,7 @@
       name: openjdk-17-jdk-headless
       state: present
 
-  - name: Install Maven3
+  - name: Install Maven
     apt:
       name: maven
       state: present
